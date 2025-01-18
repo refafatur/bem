@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{{ $artikel->judul }} - BEM KM UNBIN</title>
+  <meta content="{{ $artikel->katakata }}" name="description">
+  <meta content="Struktur Organisasi, BEM UNBIN, Universitas Binaniaga Indonesia" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ asset('assets/img/logo2.png') }}" rel="icon">
+  <link href="{{ asset('assets/img/logo2.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+  <!-- Additional Styles -->
+  <style>
+    #article-detail {
+      background: #f7f9fc;
+      padding: 60px 0;
+    }
+
+    .article-detail-content {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-detail-content img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .article-detail-content h2 {
+      font-size: 36px;
+      margin-top: 20px;
+    }
+
+    .article-detail-content p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px; /* Untuk memberikan jarak antar paragraf */
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/"><span>Sinergi Cita</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a  href="/">Beranda</a></li>
+          <li class="dropdown"><a  href="#"><span>Tentang Kami</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="visi">Visi & Misi</a></li>
+              <li><a href="struktur">Struktur Organisasi</a></li>
+              <li><a href="sejarah">Sejarah Organisasi</a></li>
+            </ul>
+          </li>
+          <li><a href="acara">Acara</a></li>
+          <li><a class="active " href="artikel">Artikel</a></li>
+          <li><a href="galeri">Galeri</a></li>
+          <li><a href="kontak">Kontak</a></li>
+          <li><a href="faq">FAQ</a></li>
+          <li><a href="login">Masuk</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>{{ $artikel->judul }}</h2>
+
+        <ol>
+          <li><a href="{{ url('/') }}">Home</a></li>
+          <li>{{ $artikel->judul }}</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="article-detail">
+    <div class="container">
+        <div class="article-detail-content">
+            <img src="{{ asset('img/artikel/' . $artikel->foto) }}" alt="Artikel Detail">
+            <h2>{{ $artikel->judul }}</h2>
+            <p><i class="bi bi-info-circle"></i> {{ $artikel->info }}</p>
+            <p><i class="bi bi-calendar"></i> {{ date('d F Y', strtotime($artikel->tanggal)) }}</p>
+            {!! $artikel->katakata !!}
+        </div>
+    </div>
+</section>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row align-items-center">
+        
+          <div class="col-lg-6 col-md-6 footer-photo">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Foto BEM UNBIN" class="footer-img">
+          </div>
+        
+          <div class="col-lg-6 col-md-6 footer-info">
+            <h3>Follow us on social media</h3>
+            <div class="social-links mt-3">
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+              <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; 2024 <strong><span>Badan Eksekutif Mahasiswa Universitas Binaniaga Indonesia</span></strong>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+   <!-- Tombol untuk membuka formulir -->
+<button class="form-aspirasi-btn">
+  <i class="bi bi-chat-dots-fill"></i>
+</button>
+
+<!-- Formulir Aspirasi Mahasiswa -->
+<div class="form-aspirasi-container" id="formAspirasi">
+  <span class="close-btn">&times;</span>
+  <h2>Aspirasi Mahasiswa</h2>
+  <form action="aspirasi/tambah" method="post">
+    @csrf
+    <div class="form-group">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="npm">NPM:</label>
+      <input type="number" id="npm" name="npm" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="prodi">Prodi:</label>
+      <select id="prodi" name="prodi" class="form-control" required>
+        <option value="">Pilih Prodi</option>
+        <option value="Sistem Informasi">Sistem Informasi</option>
+        <option value="Teknik Informatika">Teknik Informatika</option>
+        <option value="Teknologi Informasi">Teknologi Informasi</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="pesan">Aspirasi:</label>
+      <textarea id="pesan" name="pesan" class="form-control" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Kirim</button>
+  </form>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ asset('assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
